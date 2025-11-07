@@ -19,51 +19,51 @@ public:
 
     // Core Insertion Operations
     void pushFront(const T& item) override {
-        list.addHead(item);
+        list.AddHead(item);
     }
     void pushBack(const T& item) override {
-        list.addTail(item);
+        list.AddTail(item);
     }
 
     // Core Removal Operations
     T popFront() override {
-        if (list.getCount() == 0) {
-            throw std::out_of_range("The deque is empty");
+        if (list.GetCount() == 0) {
+            throw std::runtime_error("The deque is empty");
         }
 
-        T item = list.getHead()->data;
-        list.removeHead();
+        T item = list.GetHead()->data;
+        list.RemoveHead();
         return item;
     }
     T popBack() override {
-        if (list.getCount() == 0) {
-            throw std::out_of_range("The deque is empty");
+        if (list.GetCount() == 0) {
+            throw std::runtime_error("The deque is empty");
         }
 
-        T item = list.getTail()->data;
-        list.removeTail();
+        T item = list.GetTail()->data;
+        list.RemoveTail();
         return item;
     }
 
     // Element Accessors
     const T& front() const override {
-        if (list.getCount() == 0) {
-            throw std::out_of_range("The deque is empty");
+        if (list.GetCount() == 0) {
+            throw std::runtime_error("The deque is empty");
         }
 
-        return list.getHead()->data;
+        return list.GetHead()->data;
     }
     const T& back() const override {
-        if (list.getCount() == 0) {
-            throw std::out_of_range("The deque is empty");
+        if (list.GetCount() == 0) {
+            throw std::runtime_error("The deque is empty");
         }
 
-        return list.getTail()->data;
+        return list.GetTail()->data;
     }
 
     // Getter
     std::size_t getSize() const noexcept override {
-        return list.getCount();
+        return list.GetCount();
     }
 };
 

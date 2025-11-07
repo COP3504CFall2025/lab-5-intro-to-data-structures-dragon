@@ -2,6 +2,7 @@
 
 #include <cstddef>
 #include <stdexcept>
+#include <cassert>
 
 
 template <typename T>

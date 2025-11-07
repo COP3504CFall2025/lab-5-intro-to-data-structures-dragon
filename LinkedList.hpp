@@ -21,7 +21,7 @@ class LinkedList {
 
 public:
 	// Behaviors
-	void printForward() const {
+	void PrintForward() const {
 		const Node* curNode = head;
 		while (curNode) {
 			std::cout << curNode->data << " ";
@@ -29,7 +29,7 @@ public:
 		}
 		std::cout << std::endl;
 	}
-	void printReverse() const {
+	void PrintReverse() const {
 		const Node* curNode = tail;
 		while (curNode) {
 			std::cout << curNode->data << " ";
@@ -39,24 +39,24 @@ public:
 	}
 
 	// Accessors
-	[[nodiscard]] unsigned int getCount() const {
+	[[nodiscard]] unsigned int GetCount() const {
 		return count;
 	}
-	Node* getHead() {
+	Node* GetHead() {
 		return head;
 	}
-	const Node* getHead() const {
+	const Node* GetHead() const {
 		return head;
 	}
-	Node* getTail() {
+	Node* GetTail() {
 		return tail;
 	}
-	const Node* getTail() const {
+	const Node* GetTail() const {
 		return tail;
 	}
 
 	// Insertion
-	void addHead(const T& data) {
+	void AddHead(const T& data) {
 		Node* newHead = new Node{data, nullptr, head};
 
 		if (head) {
@@ -69,7 +69,7 @@ public:
 		head = newHead;
 		count++;
 	}
-	void addTail(const T& data) {
+	void AddTail(const T& data) {
 		Node* newTail = new Node{data, tail, nullptr};
 
 		if (tail) {
@@ -84,7 +84,7 @@ public:
 	}
 
 	// Removal
-	bool removeHead() {
+	bool RemoveHead() {
 		if (!head) {
 			return false;
 		}
@@ -104,7 +104,7 @@ public:
 
 		return true;
 	}
-	bool removeTail() {
+	bool RemoveTail() {
 		if (!tail) {
 			return false;
 		}
@@ -124,8 +124,8 @@ public:
 
 		return true;
 	}
-	void clear() {
-		while (removeHead()) {}
+	void Clear() {
+		while (RemoveHead()) {}
 	}
 
 	// Operators
@@ -134,7 +134,7 @@ public:
 			return *this;
 		}
 
-		clear();
+		Clear();
 
 		head = other.head;
 		tail = other.tail;
@@ -151,7 +151,7 @@ public:
 			return *this;
 		}
 
-		clear();
+		Clear();
 
 		Node* prevNode = nullptr;
 		Node* curNode = rhs.head;

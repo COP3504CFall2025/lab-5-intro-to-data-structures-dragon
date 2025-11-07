@@ -111,7 +111,7 @@ public:
     // Deletion
     T popFront() override {
         if (size_ == 0) {
-            throw std::out_of_range("The deque is empty");
+            throw std::runtime_error("The deque is empty");
         }
 
         T item = data_[front_];
@@ -126,7 +126,7 @@ public:
     }
     T popBack() override {
         if (size_ == 0) {
-            throw std::out_of_range("The deque is empty");
+            throw std::runtime_error("The deque is empty");
         }
 
         back_ = (back_ == 0) ? capacity_ - 1 : back_ - 1;

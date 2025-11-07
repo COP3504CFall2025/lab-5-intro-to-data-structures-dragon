@@ -15,34 +15,31 @@ public:
 
     // Insertion
     void push(const T& item) override {
-        list.addHead(item);
+        list.AddHead(item);
     }
 
     // Deletion
     T pop() override {
-        if (list.getCount() == 0) {
-            throw std::out_of_range("The stack is empty");
+        if (list.GetCount() == 0) {
+            throw std::runtime_error("The stack is empty");
         }
-        T item = list.getHead()->data;
-        list.removeHead();
+        T item = list.GetHead()->data;
+        list.RemoveHead();
 
         return item;
     }
 
     // Access
     T peek() const override {
-        if (list.getCount() == 0) {
-            throw std::out_of_range("The stack is empty");
+        if (list.GetCount() == 0) {
+            throw std::runtime_error("The stack is empty");
         }
 
-        return list.getHead()->data;
+        return list.GetHead()->data;
     }
 
     // Getters
     std::size_t getSize() const noexcept override {
-        return list.getCount();
+        return list.GetCount();
     }
-
-    // Print
-
 };

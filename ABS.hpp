@@ -101,7 +101,14 @@ public:
         if (curr_size_ == 0) {
             throw std::runtime_error("The stack is empty");
         }
-        return array_[--curr_size_];
+        T data = array_[curr_size_ - 1];
+        curr_size_--;
+
+        if (curr_size_ <= capacity_/scale_factor_) {
+            shrinkIfNeeded();
+        }
+
+        return data;
     }
 
     // Resizing
@@ -114,6 +121,17 @@ public:
         delete[] array_;
         array_ = newArray;
         capacity_ *= scale_factor_;
+    }
+
+    void shrinkIfNeeded() {
+        T* newData = new T[capacity_ / scale_factor_];
+        for (size_t i = 0; i < curr_size_; i++) {
+            newData[i] = array_[i];
+        }
+
+        delete[] array_;
+        array_ = newData;
+        capacity_ /= scale_factor_;
     }
 
 private:

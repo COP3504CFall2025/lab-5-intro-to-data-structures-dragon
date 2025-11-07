@@ -133,7 +133,7 @@ public:
         T item = data_[back_];
         size_--;
 
-        if (size_ <= capacity_/SCALE_FACTOR) {
+        if (size_ <= capacity_/(SCALE_FACTOR * 2)) {
             shrinkIfNeeded();
         }
 

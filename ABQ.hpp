@@ -110,7 +110,8 @@ public:
             array_[i] = array_[i+1];
         }
         curr_size_--;
-        if (curr_size_ <= capacity_/scale_factor_) {
+
+        if (curr_size_ <= capacity_/(scale_factor_ * 2)) {
             shrinkIfNeeded();
         }
         return data;

@@ -20,28 +20,27 @@ public:
 
     // Deletion
     T dequeue() override {
-        assert(list.GetHead() != nullptr);
-        if (list.GetCount() == 0) {
+        if (list.getCount() == 0) {
             throw std::runtime_error("The queue is empty");
         }
 
-        T item = list.GetHead()->data;
+        T item = list.getHead()->data;
         list.RemoveHead();
         return item;
     }
 
     // Access
     T peek() const override {
-        if (list.GetCount() == 0) {
+        if (list.getCount() == 0) {
             throw std::runtime_error("The queue is empty");
         }
 
-        return list.GetHead()->data;
+        return list.getHead()->data;
     }
 
     // Getter
     std::size_t getSize() const noexcept override {
-        return list.GetCount();
+        return list.getCount();
     }
 
 };

@@ -21,7 +21,7 @@ class LinkedList {
 
 public:
 	// Behaviors
-	void PrintForward() const {
+	void printForward() const {
 		const Node* curNode = head;
 		while (curNode) {
 			std::cout << curNode->data << " ";
@@ -39,19 +39,19 @@ public:
 	}
 
 	// Accessors
-	[[nodiscard]] unsigned int GetCount() const {
+	[[nodiscard]] unsigned int getCount() const {
 		return count;
 	}
-	Node* GetHead() {
+	Node* getHead() {
 		return head;
 	}
-	const Node* GetHead() const {
+	const Node* getHead() const {
 		return head;
 	}
-	Node* GetTail() {
+	Node* getTail() {
 		return tail;
 	}
-	const Node* GetTail() const {
+	const Node* getTail() const {
 		return tail;
 	}
 

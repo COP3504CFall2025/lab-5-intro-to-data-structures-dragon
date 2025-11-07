@@ -142,9 +142,15 @@ public:
 
     // Access
     const T& front() const override {
+        if (size_ == 0) {
+            throw std::runtime_error("The deque is empty");
+        }
         return data_[front_];
     }
     const T& back() const override {
+        if (size_ == 0) {
+            throw std::runtime_error("The deque is empty");
+        }
         size_t index = (back_ == 0) ? capacity_ - 1 : back_ - 1;
         return data_[index];
     }

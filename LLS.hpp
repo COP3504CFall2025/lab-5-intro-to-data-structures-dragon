@@ -20,10 +20,10 @@ public:
 
     // Deletion
     T pop() override {
-        if (list.GetCount() == 0) {
+        if (list.getCount() == 0) {
             throw std::runtime_error("The stack is empty");
         }
-        T item = list.GetHead()->data;
+        T item = list.getHead()->data;
         list.RemoveHead();
 
         return item;
@@ -31,15 +31,15 @@ public:
 
     // Access
     T peek() const override {
-        if (list.GetCount() == 0) {
+        if (list.getCount() == 0) {
             throw std::runtime_error("The stack is empty");
         }
 
-        return list.GetHead()->data;
+        return list.getHead()->data;
     }
 
     // Getters
     std::size_t getSize() const noexcept override {
-        return list.GetCount();
+        return list.getCount();
     }
 };

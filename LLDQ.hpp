@@ -27,43 +27,43 @@ public:
 
     // Core Removal Operations
     T popFront() override {
-        if (list.GetCount() == 0) {
+        if (list.getCount() == 0) {
             throw std::runtime_error("The deque is empty");
         }
 
-        T item = list.GetHead()->data;
+        T item = list.getHead()->data;
         list.RemoveHead();
         return item;
     }
     T popBack() override {
-        if (list.GetCount() == 0) {
+        if (list.getCount() == 0) {
             throw std::runtime_error("The deque is empty");
         }
 
-        T item = list.GetTail()->data;
+        T item = list.getTail()->data;
         list.RemoveTail();
         return item;
     }
 
     // Element Accessors
     const T& front() const override {
-        if (list.GetCount() == 0) {
+        if (list.getCount() == 0) {
             throw std::runtime_error("The deque is empty");
         }
 
-        return list.GetHead()->data;
+        return list.getHead()->data;
     }
     const T& back() const override {
-        if (list.GetCount() == 0) {
+        if (list.getCount() == 0) {
             throw std::runtime_error("The deque is empty");
         }
 
-        return list.GetTail()->data;
+        return list.getTail()->data;
     }
 
     // Getter
     std::size_t getSize() const noexcept override {
-        return list.GetCount();
+        return list.getCount();
     }
 };
 
